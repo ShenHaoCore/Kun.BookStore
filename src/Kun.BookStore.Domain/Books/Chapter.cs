@@ -56,7 +56,7 @@ public class Chapter : Entity<Guid>, IHasCreationTime
     public Chapter(string title, string content, string authorMessage = null)
     {
         Title = Check.NotNullOrWhiteSpace(title, nameof(title));
-        ChapterText= new ChapterText(content, authorMessage);
+        ChapterText = new ChapterText(content, authorMessage);
         WordsNumber = content.Length;
     }
 }

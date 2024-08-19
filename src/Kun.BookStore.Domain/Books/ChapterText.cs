@@ -26,7 +26,7 @@ public class ChapterText : AuditedEntity<Guid>
     /// <summary>
     /// 作者留言
     /// </summary>
-    public string AuthorMessage { get; set; }
+    public string? AuthorMessage { get; set; }
 
     /// <summary>
     /// 章节文本

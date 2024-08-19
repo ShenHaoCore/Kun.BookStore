@@ -25,7 +25,7 @@ public class Category : FullAuditedAggregateRoot<Guid>
     /// </summary>
     /// <param name="id">ID</param>
     /// <param name="name">名称</param>
-    private Category(Guid id, string name) : base(id)
+    public Category(Guid id, string name) : base(id)
     {
         Name = Check.NotNullOrWhiteSpace(name, nameof(name));
     }

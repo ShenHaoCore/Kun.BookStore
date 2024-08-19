@@ -55,6 +55,7 @@ public class Volume : Entity<Guid>, IHasCreationTime
     {
         Title = title;
         Description = description;
+        Chapters = new List<Chapter>();
     }
 
     /// <summary>
