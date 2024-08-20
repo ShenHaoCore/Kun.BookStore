@@ -21,7 +21,7 @@ public class ChapterText : AuditedEntity<Guid>
     /// <summary>
     /// 内容
     /// </summary>
-    public string Content { get; set; }
+    public string Content { get; set; } = string.Empty;
 
     /// <summary>
     /// 作者留言
@@ -41,7 +41,7 @@ public class ChapterText : AuditedEntity<Guid>
     /// </summary>
     /// <param name="content">内容</param>
     /// <param name="authorMessage">作者留言</param>
-    public ChapterText(string content, string authorMessage = null)
+    public ChapterText(string content, string? authorMessage = null)
     {
         Content = Check.NotNullOrWhiteSpace(content, nameof(content));
         AuthorMessage = authorMessage;

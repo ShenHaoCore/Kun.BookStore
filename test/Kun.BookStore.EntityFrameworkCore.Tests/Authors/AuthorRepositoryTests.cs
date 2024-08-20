@@ -1,16 +1,16 @@
-﻿using Kun.BookStore.Authors;
+﻿using Kun.BookStore.EntityFrameworkCore;
 using Shouldly;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Guids;
 
-namespace Kun.BookStore.EntityFrameworkCore.Samples;
+namespace Kun.BookStore.Authors;
 
 /// <summary>
 /// 
 /// </summary>
-public class AuthorRepositoryTests: BookStoreEntityFrameworkCoreTestBase
+public sealed class AuthorRepositoryTests : BookStoreEntityFrameworkCoreTestBase
 {
-    private readonly IRepository<Author, Guid> _authorRepository;
+    private readonly IAuthorRepository _authorRepository; 
     private readonly IGuidGenerator _guidGenerator;
 
     /// <summary>
@@ -18,7 +18,7 @@ public class AuthorRepositoryTests: BookStoreEntityFrameworkCoreTestBase
     /// </summary>
     public AuthorRepositoryTests()
     {
-        _authorRepository = GetRequiredService<IRepository<Author, Guid>>();
+        _authorRepository = GetRequiredService<IAuthorRepository>();
         _guidGenerator = GetRequiredService<IGuidGenerator>();
     }
 

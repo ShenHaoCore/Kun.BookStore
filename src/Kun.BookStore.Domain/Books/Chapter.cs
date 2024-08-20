@@ -5,27 +5,27 @@ using Volo.Abp.Domain.Entities;
 namespace Kun.BookStore.Books;
 
 /// <summary>
-/// 章
+/// 章节
 /// </summary>
 public class Chapter : Entity<Guid>, IHasCreationTime
 {
     /// <summary>
-    /// 
+    /// 分卷
     /// </summary>
     public Volume Volume { get; set; }
 
     /// <summary>
-    /// 
+    /// 分卷ID
     /// </summary>
     public Guid VolumeId { get; set; } 
 
     /// <summary>
     /// 标题
     /// </summary>
-    public string Title { get; set; }
+    public string Title { get; set; } = string.Empty;
 
     /// <summary>
-    /// 
+    /// 章节内容
     /// </summary>
     public ChapterText ChapterText { get; protected set; }
 
@@ -40,7 +40,7 @@ public class Chapter : Entity<Guid>, IHasCreationTime
     public DateTime CreationTime { get; }
 
     /// <summary>
-    /// 章
+    /// 章节
     /// </summary>
     private Chapter()
     {
@@ -48,12 +48,12 @@ public class Chapter : Entity<Guid>, IHasCreationTime
     }
 
     /// <summary>
-    /// 章
+    /// 章节
     /// </summary>
     /// <param name="title">标题</param>
     /// <param name="content">内容</param>
     /// <param name="authorMessage">作者留言</param>
-    public Chapter(string title, string content, string authorMessage = null)
+    public Chapter(string title, string content, string? authorMessage = null)
     {
         Title = Check.NotNullOrWhiteSpace(title, nameof(title));
         ChapterText = new ChapterText(content, authorMessage);

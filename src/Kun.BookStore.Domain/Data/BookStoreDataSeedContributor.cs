@@ -16,7 +16,7 @@ namespace Kun.BookStore.Data
         private readonly IGuidGenerator _guidGenerator;
         private readonly IRepository<Author, Guid> _authorRepository;
         private readonly IRepository<Book, Guid> _bookRepository;
-        private readonly IRepository<Category, Guid> _categoryRepository; 
+        private readonly IRepository<Category, Guid> _categoryRepository;
 
         /// <summary>
         /// 
@@ -51,13 +51,15 @@ namespace Kun.BookStore.Data
         {
             var author = new Author(_guidGenerator.Create(), "刘慈欣", "中国科幻的领军人物");
             await _authorRepository.InsertAsync(author);
+            var author1 = new Author(_guidGenerator.Create(), "南派三叔", "网络文学20年十大悬疑作家");
+            await _authorRepository.InsertAsync(author1);
 
             var category = new Category(_guidGenerator.Create(), "科幻");
             await _categoryRepository.InsertAsync(category);
 
             var book = new Book(_guidGenerator.Create(), "三体", new DateTime(2006, 5, 1), author.Id, author.Name, category.Id, category.Name);
-            book.AddVolume("第一卷", "分卷描述");
-            book.Volumes.First().AddChapter("第一章", "章节内容");
+            book.CreateVolume("第一卷", "分卷描述");
+            book.Volumes.First().CreateChapter("第一章", "章节内容");
             await _bookRepository.InsertAsync(book);
         }
     }

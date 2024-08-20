@@ -13,7 +13,7 @@ public class Book : AuditedAggregateRoot<Guid>
     /// <summary>
     /// 名称
     /// </summary>
-    public string Name { get; private set; }
+    public string Name { get; private set; } = string.Empty;
 
     /// <summary>
     /// 发布时间
@@ -28,7 +28,7 @@ public class Book : AuditedAggregateRoot<Guid>
     /// <summary>
     /// 作者名称
     /// </summary>
-    public string AuthorName { get; set; }
+    public string AuthorName { get; set; } = string.Empty;
 
     /// <summary>
     /// 类别
@@ -38,15 +38,15 @@ public class Book : AuditedAggregateRoot<Guid>
     /// <summary>
     /// 类别名称
     /// </summary>
-    public string CategoryName { get; set; }
+    public string CategoryName { get; set; } = string.Empty;
 
     /// <summary>
     /// 
     /// </summary>
-    public List<Volume> Volumes { get; protected set; }
+    public List<Volume> Volumes { get; protected set; } = new List<Volume>();
 
     /// <summary>
-    /// 书
+    /// 书籍
     /// </summary>
     private Book()
     {
@@ -54,7 +54,7 @@ public class Book : AuditedAggregateRoot<Guid>
     }
 
     /// <summary>
-    /// 书
+    /// 书籍
     /// </summary>
     /// <param name="id">ID</param>
     /// <param name="name">名称</param>
@@ -71,7 +71,6 @@ public class Book : AuditedAggregateRoot<Guid>
         AuthorName = Check.NotNullOrWhiteSpace(authorName, nameof(authorName));
         CategoryId = categoryId;
         CategoryName = Check.NotNullOrWhiteSpace(categoryName, nameof(categoryName));
-        Volumes = new List<Volume>();
     }
 
     /// <summary>
@@ -88,7 +87,7 @@ public class Book : AuditedAggregateRoot<Guid>
     /// </summary>
     /// <param name="title">标题</param>
     /// <param name="description">描述</param>
-    public void AddVolume(string title, string description = null)
+    public void CreateVolume(string title, string? description = null)
     {
         if (Volumes.Any(volume => volume.Title == title)) { return; }
         Volumes.Add(new Volume(title, description));
@@ -98,7 +97,7 @@ public class Book : AuditedAggregateRoot<Guid>
     /// 移除分卷
     /// </summary>
     /// <param name="volumeId">分卷ID</param>
-    public void RenoveVolume(Guid volumeId)
+    public void RemoveVolume(Guid volumeId)
     {
         Volumes.RemoveAll(volume => volume.Id == volumeId);
     }

@@ -11,7 +11,7 @@ public class Category : FullAuditedAggregateRoot<Guid>
     /// <summary>
     /// 名称
     /// </summary>
-    public string Name { get; private set; }
+    public string Name { get; private set; } = string.Empty;
 
     /// <summary>
     /// 类别

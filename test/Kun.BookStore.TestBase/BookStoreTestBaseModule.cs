@@ -23,7 +23,7 @@ public class BookStoreTestBaseModule : AbpModule
     {
         AsyncHelper.RunSync(async () =>
         {
-            using (var scope = context.ServiceProvider.CreateScope())
+            using (IServiceScope scope = context.ServiceProvider.CreateScope())
             {
                 await scope.ServiceProvider.GetRequiredService<IDataSeeder>().SeedAsync();
             }
