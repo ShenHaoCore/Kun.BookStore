@@ -7,5 +7,4 @@ namespace Kun.BookStore.Authors;
 /// </summary>
 public interface IAuthorRepository : IRepository<Author, Guid>
 {
-
 }

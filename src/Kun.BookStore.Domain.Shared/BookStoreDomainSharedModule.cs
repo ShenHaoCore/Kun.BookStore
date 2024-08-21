@@ -1,11 +1,10 @@
 ﻿using Volo.Abp.Modularity;
 
-namespace Kun.BookStore
+namespace Kun.BookStore;
+
+/// <summary>
+/// 
+/// </summary>
+public class BookStoreDomainSharedModule : AbpModule
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class BookStoreDomainSharedModule : AbpModule
-    {
-    }
 }

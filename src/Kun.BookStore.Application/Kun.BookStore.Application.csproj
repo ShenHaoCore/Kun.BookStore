@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Kun.BookStore</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="8.2.2" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="8.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kun.BookStore.Application.Contracts\Kun.BookStore.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Kun.BookStore.Domain\Kun.BookStore.Domain.csproj" />
+    <ProjectReference Include="..\Kun.BookStore.EntityFrameworkCore\Kun.BookStore.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

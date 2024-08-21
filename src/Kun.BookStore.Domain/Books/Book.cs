@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using Volo.Abp;
 using Volo.Abp.Domain.Entities.Auditing;
 
@@ -87,7 +86,7 @@ public class Book : AuditedAggregateRoot<Guid>
     /// </summary>
     /// <param name="title">标题</param>
     /// <param name="description">描述</param>
-    public void CreateVolume(string title, string? description = null)
+    public void AddVolume(string title, string? description = null)
     {
         if (Volumes.Any(volume => volume.Title == title)) { return; }
         Volumes.Add(new Volume(title, description));

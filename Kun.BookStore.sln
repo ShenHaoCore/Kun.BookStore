@@ -7,15 +7,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CC924660-6B3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F644752D-6E7B-44DB-B46B-40EB60E37F62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.Domain", "src\Kun.BookStore.Domain\Kun.BookStore.Domain.csproj", "{0D797ED8-1515-4EBD-BFFC-268CD47BB8CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kun.BookStore.Domain", "src\Kun.BookStore.Domain\Kun.BookStore.Domain.csproj", "{0D797ED8-1515-4EBD-BFFC-268CD47BB8CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.Domain.Shared", "src\Kun.BookStore.Domain.Shared\Kun.BookStore.Domain.Shared.csproj", "{F4E8B925-B5C3-43A8-991E-36542C5B11B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kun.BookStore.Domain.Shared", "src\Kun.BookStore.Domain.Shared\Kun.BookStore.Domain.Shared.csproj", "{F4E8B925-B5C3-43A8-991E-36542C5B11B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.EntityFrameworkCore", "src\Kun.BookStore.EntityFrameworkCore\Kun.BookStore.EntityFrameworkCore.csproj", "{BCFEE057-2B2A-4270-AE55-CA01ADF6367C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kun.BookStore.EntityFrameworkCore", "src\Kun.BookStore.EntityFrameworkCore\Kun.BookStore.EntityFrameworkCore.csproj", "{BCFEE057-2B2A-4270-AE55-CA01ADF6367C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.TestBase", "test\Kun.BookStore.TestBase\Kun.BookStore.TestBase.csproj", "{05FC5DD5-7025-4756-B625-0C09AFB39E5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kun.BookStore.TestBase", "test\Kun.BookStore.TestBase\Kun.BookStore.TestBase.csproj", "{05FC5DD5-7025-4756-B625-0C09AFB39E5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.EntityFrameworkCore.Tests", "test\Kun.BookStore.EntityFrameworkCore.Tests\Kun.BookStore.EntityFrameworkCore.Tests.csproj", "{2AC47793-82D8-475A-8A1E-49C035169CA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kun.BookStore.EntityFrameworkCore.Tests", "test\Kun.BookStore.EntityFrameworkCore.Tests\Kun.BookStore.EntityFrameworkCore.Tests.csproj", "{2AC47793-82D8-475A-8A1E-49C035169CA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.SqlSugarCore", "src\Kun.BookStore.SqlSugarCore\Kun.BookStore.SqlSugarCore.csproj", "{9FB714CE-9502-4263-82AB-92FD8F3A26AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.Application.Contracts", "src\Kun.BookStore.Application.Contracts\Kun.BookStore.Application.Contracts.csproj", "{BB35EAFC-8D5E-4A43-BEB1-D8364B8A9922}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.Application", "src\Kun.BookStore.Application\Kun.BookStore.Application.csproj", "{47E69EC4-7D65-4919-AA98-D46EAC97B301}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.Application.Texts", "test\Kun.BookStore.Application.Texts\Kun.BookStore.Application.Texts.csproj", "{2F2BB55B-BFD2-4ECA-9E78-37A4EC35F25E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.Domain.Tests", "test\Kun.BookStore.Domain.Tests\Kun.BookStore.Domain.Tests.csproj", "{3681A417-FF68-4C9D-B00C-71A1A9C350AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +53,26 @@ Global
 		{2AC47793-82D8-475A-8A1E-49C035169CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AC47793-82D8-475A-8A1E-49C035169CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AC47793-82D8-475A-8A1E-49C035169CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB714CE-9502-4263-82AB-92FD8F3A26AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB714CE-9502-4263-82AB-92FD8F3A26AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB714CE-9502-4263-82AB-92FD8F3A26AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB714CE-9502-4263-82AB-92FD8F3A26AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB35EAFC-8D5E-4A43-BEB1-D8364B8A9922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB35EAFC-8D5E-4A43-BEB1-D8364B8A9922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB35EAFC-8D5E-4A43-BEB1-D8364B8A9922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB35EAFC-8D5E-4A43-BEB1-D8364B8A9922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47E69EC4-7D65-4919-AA98-D46EAC97B301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47E69EC4-7D65-4919-AA98-D46EAC97B301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47E69EC4-7D65-4919-AA98-D46EAC97B301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47E69EC4-7D65-4919-AA98-D46EAC97B301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F2BB55B-BFD2-4ECA-9E78-37A4EC35F25E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F2BB55B-BFD2-4ECA-9E78-37A4EC35F25E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F2BB55B-BFD2-4ECA-9E78-37A4EC35F25E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F2BB55B-BFD2-4ECA-9E78-37A4EC35F25E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3681A417-FF68-4C9D-B00C-71A1A9C350AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3681A417-FF68-4C9D-B00C-71A1A9C350AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3681A417-FF68-4C9D-B00C-71A1A9C350AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3681A417-FF68-4C9D-B00C-71A1A9C350AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +83,11 @@ Global
 		{BCFEE057-2B2A-4270-AE55-CA01ADF6367C} = {CC924660-6B3B-41AA-87A5-A25A6793525E}
 		{05FC5DD5-7025-4756-B625-0C09AFB39E5B} = {F644752D-6E7B-44DB-B46B-40EB60E37F62}
 		{2AC47793-82D8-475A-8A1E-49C035169CA5} = {F644752D-6E7B-44DB-B46B-40EB60E37F62}
+		{9FB714CE-9502-4263-82AB-92FD8F3A26AC} = {CC924660-6B3B-41AA-87A5-A25A6793525E}
+		{BB35EAFC-8D5E-4A43-BEB1-D8364B8A9922} = {CC924660-6B3B-41AA-87A5-A25A6793525E}
+		{47E69EC4-7D65-4919-AA98-D46EAC97B301} = {CC924660-6B3B-41AA-87A5-A25A6793525E}
+		{2F2BB55B-BFD2-4ECA-9E78-37A4EC35F25E} = {F644752D-6E7B-44DB-B46B-40EB60E37F62}
+		{3681A417-FF68-4C9D-B00C-71A1A9C350AF} = {F644752D-6E7B-44DB-B46B-40EB60E37F62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F725F131-CDCF-45D1-A4CE-9C985FF554DE}

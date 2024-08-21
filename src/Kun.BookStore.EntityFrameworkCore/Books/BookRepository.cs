@@ -25,11 +25,9 @@ public class BookRepository : EfCoreRepository<BookStoreDbContext, Book, Guid>, 
     /// <param name="include"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    public async Task<Chapter> FindChapterByIdAsync(Guid id, bool include = true, CancellationToken cancellationToken = default)
+    public async Task<Chapter?> FindChapterByIdAsync(Guid id, bool include = true, CancellationToken cancellationToken = default)
     {
         var db = await GetDbContextAsync();
-        var chapters = db.Chapters;
-        var result = await chapters.IncludeIf(include, chapter => chapter.ChapterText).FirstOrDefaultAsync(chapter => chapter.Id == id, GetCancellationToken(cancellationToken));
-        return result;
+        return await db.Chapters.IncludeIf(include, chapter => chapter.ChapterText).FirstOrDefaultAsync(chapter => chapter.Id == id, GetCancellationToken(cancellationToken));
     }
 }

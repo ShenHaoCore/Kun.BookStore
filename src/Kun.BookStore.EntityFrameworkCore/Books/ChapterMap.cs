@@ -18,5 +18,6 @@ public class ChapterMap : IEntityTypeConfiguration<Chapter>
         builder.ToTable(nameof(Chapter));
         builder.ConfigureByConvention();
         builder.Property(chapter => chapter.Title);
+        //builder.HasOne<Volume>(chapter => chapter.Volume).WithMany(volume => volume.Chapters).IsRequired().HasForeignKey(x => x.VolumeId);
     }
 }

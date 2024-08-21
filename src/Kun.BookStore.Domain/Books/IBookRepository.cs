@@ -14,5 +14,5 @@ public interface IBookRepository : IRepository<Book, Guid>
     /// <param name="include"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<Chapter> FindChapterByIdAsync(Guid id, bool include = true, CancellationToken cancellationToken = default);
+    Task<Chapter?> FindChapterByIdAsync(Guid id, bool include = true, CancellationToken cancellationToken = default);
 }

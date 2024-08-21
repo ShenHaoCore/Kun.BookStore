@@ -19,6 +19,6 @@ public class BookMap : IEntityTypeConfiguration<Book>
         builder.ToTable(nameof(Book));
         builder.ConfigureByConvention();
         builder.Property(book => book.Name).IsRequired().HasMaxLength(BookConsts.MaxNameLength);
-        //builder.HasOne<Author>().WithMany().HasForeignKey(x => x.AuthorId).IsRequired();
+        //builder.HasOne<Author>().HasForeignKey(x => x.AuthorId).IsRequired();
     }
 }

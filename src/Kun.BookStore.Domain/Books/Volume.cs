@@ -11,7 +11,7 @@ public class Volume : Entity<Guid>, IHasCreationTime
     /// <summary>
     /// 
     /// </summary>
-    public Book? Book { get; set; }
+    public Book Book { get; set; }
 
     /// <summary>
     /// 
@@ -34,9 +34,9 @@ public class Volume : Entity<Guid>, IHasCreationTime
     public List<Chapter> Chapters { get; protected set; } = new List<Chapter>();
 
     /// <summary>
-    /// 
+    /// 创建时间
     /// </summary>
-    public DateTime CreationTime { get; }
+    public DateTime CreationTime { get; set; }
 
     /// <summary>
     /// 分卷
@@ -62,7 +62,7 @@ public class Volume : Entity<Guid>, IHasCreationTime
     /// </summary>
     /// <param name="title">标题</param>
     /// <param name="content">内容</param>
-    public void CreateChapter(string title, string content)
+    public void AddChapter(string title, string content)
     {
         if (Chapters.Any(chapter => chapter.Title == title)) { return; }
         Chapters.Add(new Chapter(title, content));

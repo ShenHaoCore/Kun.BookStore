@@ -37,7 +37,7 @@ public class Chapter : Entity<Guid>, IHasCreationTime
     /// <summary>
     /// 创建时间
     /// </summary>
-    public DateTime CreationTime { get; }
+    public DateTime CreationTime { get; set; }
 
     /// <summary>
     /// 章节

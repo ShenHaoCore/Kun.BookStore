@@ -1,22 +1,24 @@
-﻿using Microsoft.Data.Sqlite;
-using Microsoft.EntityFrameworkCore;
+﻿using Kun.BookStore.EntityFrameworkCore;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore.Sqlite;
 using Volo.Abp.Modularity;
 
-namespace Kun.BookStore.EntityFrameworkCore;
+namespace Kun.BookStore;
 
 /// <summary>
 /// 
-/// </summary
+/// </summary>
 [DependsOn(typeof(AbpEntityFrameworkCoreSqliteModule))]
 [DependsOn(typeof(BookStoreEntityFrameworkCoreModule))]
+[DependsOn(typeof(BookStoreApplicationModule))]
 [DependsOn(typeof(BookStoreTestBaseModule))]
-public class BookStoreEntityFrameworkCoreTestModule : AbpModule
+public class BookStoreApplicationTestModule : AbpModule
 {
     private SqliteConnection? _sqliteConnection;
 

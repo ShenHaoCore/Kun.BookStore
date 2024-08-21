@@ -26,10 +26,7 @@ public class BookStoreEntityFrameworkCoreModule : AbpModule
         Configure<AbpDbContextOptions>(options => { options.UseSqlServer(); });
         Configure<AbpEntityOptions>(options =>
         {
-            options.Entity<Book>(entityOptions =>
-            {
-                entityOptions.DefaultWithDetailsFunc = query => query.Include(book => book.Volumes).ThenInclude(volume => volume.Chapters).ThenInclude(chapter => chapter.ChapterText);
-            });
+            options.Entity<Book>(entityOptions => { entityOptions.DefaultWithDetailsFunc = query => query.Include(book => book.Volumes).ThenInclude(volume => volume.Chapters); });
         });
     }
 }

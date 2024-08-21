@@ -18,5 +18,6 @@ public class VolumeMap : IEntityTypeConfiguration<Volume>
         builder.ToTable(nameof(Volume));
         builder.ConfigureByConvention();
         builder.Property(volume => volume.Title).IsRequired().HasMaxLength(BookConsts.MaxNameLength);
+        //builder.HasOne<Book>(volume => volume.Book).WithMany(book => book.Volumes).IsRequired().HasForeignKey(x => x.BookId);
     }
 }
