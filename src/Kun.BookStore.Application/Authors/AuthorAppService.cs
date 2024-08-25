@@ -22,6 +22,8 @@ public class AuthorAppService : ApplicationService, IAuthorAppService
         _authorManager = authorManager;
     }
 
+    
+
     /// <summary>
     /// 
     /// </summary>

@@ -14,34 +14,11 @@ namespace Kun.BookStore.EntityFrameworkCore;
 [ConnectionStringName("BookStore")]
 public class BookStoreDbContext : AbpDbContext<BookStoreDbContext>
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public DbSet<Author> Authors { get; set; }
-
-    /// <summary>
-    /// 
-    /// </summary>
     public DbSet<Category> Categories { get; set; }
-
-    /// <summary>
-    /// 
-    /// </summary>
     public DbSet<Book> Books { get; set; }
-
-    /// <summary>
-    /// 
-    /// </summary>
     public DbSet<Volume> Volumes { get; set; }
-
-    /// <summary>
-    /// 
-    /// </summary>
     public DbSet<Chapter> Chapters { get; set; }
-
-    /// <summary>
-    /// 
-    /// </summary>
     public DbSet<ChapterText> ChapterTexts { get; set; }
 
     /// <summary>
@@ -55,10 +32,10 @@ public class BookStoreDbContext : AbpDbContext<BookStoreDbContext>
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="modelBuilder"></param>
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    /// <param name="builder"></param>
+    protected override void OnModelCreating(ModelBuilder builder)
     {
-        base.OnModelCreating(modelBuilder);
-        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        base.OnModelCreating(builder);
+        builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
 }

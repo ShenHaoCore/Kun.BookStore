@@ -1,5 +1,7 @@
 ﻿using Kun.BookStore.Application.Contracts;
+using Kun.BookStore.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Autofac;
@@ -13,6 +15,7 @@ namespace Kun.BookStore.HttpApi;
 [DependsOn(typeof(AbpAspNetCoreMvcModule))]
 [DependsOn(typeof(AbpAutofacModule))]
 [DependsOn(typeof(BookStoreApplicationModule))]
+[DependsOn(typeof(BookStoreEntityFrameworkCoreModule))]
 public class BookStoreHttpApiModule : AbpModule
 {
     /// <summary>
@@ -46,7 +49,13 @@ public class BookStoreHttpApiModule : AbpModule
         app.UseRouting();
 
         app.UseSwagger();
-        app.UseSwaggerUI(options => { options.SwaggerEndpoint("/swagger/v1/swagger.json", "BookStore API"); });
+        app.UseSwaggerUI(options =>
+        {
+            options.SwaggerEndpoint("/swagger/v1/swagger.json", "BookStore API");
+            options.DocExpansion(DocExpansion.None); // 设置为 None 可折叠所有方法
+            options.DefaultModelsExpandDepth(0); // 设置为 -1 可不显示Models
+            options.DisplayRequestDuration(); // 设置持续时间的显示（以毫秒为单位）
+        });
 
         app.UseConfiguredEndpoints();
     }
