@@ -7,7 +7,7 @@ namespace Kun.BookStore.Books;
 /// <summary>
 /// 书
 /// </summary>
-public class Book : AuditedAggregateRoot<Guid>
+public class Book : FullAuditedAggregateRoot<Guid>
 {
     /// <summary>
     /// 名称

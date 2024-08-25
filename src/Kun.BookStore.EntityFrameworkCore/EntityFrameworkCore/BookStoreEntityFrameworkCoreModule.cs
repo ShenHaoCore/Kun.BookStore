@@ -22,7 +22,7 @@ public class BookStoreEntityFrameworkCoreModule : AbpModule
     /// <param name="context"></param>
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddAbpDbContext<BookStoreDbContext>(options => { options.AddDefaultRepositories(); });
+        context.Services.AddAbpDbContext<BookStoreDbContext>(options => { options.AddDefaultRepositories(includeAllEntities: true); });
         Configure<AbpDbContextOptions>(options => { options.UseSqlServer(); });
         Configure<AbpEntityOptions>(options =>
         {

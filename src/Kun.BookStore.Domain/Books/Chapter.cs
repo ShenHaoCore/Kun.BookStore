@@ -1,13 +1,12 @@
 ﻿using Volo.Abp;
-using Volo.Abp.Auditing;
-using Volo.Abp.Domain.Entities;
+using Volo.Abp.Domain.Entities.Auditing;
 
 namespace Kun.BookStore.Books;
 
 /// <summary>
 /// 章节
 /// </summary>
-public class Chapter : Entity<Guid>, IHasCreationTime
+public class Chapter : FullAuditedEntity<Guid>
 {
     /// <summary>
     /// 分卷

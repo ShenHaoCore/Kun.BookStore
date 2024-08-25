@@ -1,6 +1,5 @@
 ﻿using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
-using Volo.Abp.ObjectMapping;
 
 namespace Kun.BookStore.Authors;
 
@@ -10,14 +9,17 @@ namespace Kun.BookStore.Authors;
 public class AuthorAppService : ApplicationService, IAuthorAppService
 {
     private readonly IAuthorRepository _authorRepository;
+    private readonly AuthorManager _authorManager;
 
     /// <summary>
     /// 
     /// </summary>
     /// <param name="authorRepository"></param>
-    public AuthorAppService(IAuthorRepository authorRepository)
+    /// <param name="authorManager"></param>
+    public AuthorAppService(IAuthorRepository authorRepository, AuthorManager authorManager)
     {
         _authorRepository = authorRepository;
+        _authorManager = authorManager;
     }
 
     /// <summary>
@@ -37,10 +39,9 @@ public class AuthorAppService : ApplicationService, IAuthorAppService
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    /// <exception cref="NotImplementedException"></exception>
-    public Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(Guid id)
     {
-        throw new NotImplementedException();
+        await _authorRepository.DeleteAsync(id);
     }
 
     /// <summary>
@@ -59,12 +60,11 @@ public class AuthorAppService : ApplicationService, IAuthorAppService
     /// </summary>
     /// <param name="input"></param>
     /// <returns></returns>
-    /// <exception cref="NotImplementedException"></exception>
     public async Task<PagedResultDto<AuthorDto>> GetListAsync(GetAuthorListDto input)
     {
         if (input.Sorting.IsNullOrWhiteSpace()) { input.Sorting = nameof(Author.Name); }
-        var list = await _authorRepository.GetPagedListAsync(input.SkipCount, input.MaxResultCount, input.Sorting);
-        var count = await _authorRepository.GetCountAsync();
+        List<Author> list = await _authorRepository.GetPagedListAsync(input.SkipCount, input.MaxResultCount, input.Sorting);
+        long count = await _authorRepository.GetCountAsync();
         return new PagedResultDto<AuthorDto>(count, ObjectMapper.Map<List<Author>, List<AuthorDto>>(list));
     }
 
@@ -74,9 +74,11 @@ public class AuthorAppService : ApplicationService, IAuthorAppService
     /// <param name="id"></param>
     /// <param name="input"></param>
     /// <returns></returns>
-    /// <exception cref="NotImplementedException"></exception>
-    public Task UpdateAsync(Guid id, UpdateAuthorDto input)
+    public async Task UpdateAsync(Guid id, UpdateAuthorDto input)
     {
-        throw new NotImplementedException();
+        Author author = await _authorRepository.GetAsync(id);
+        if (author.Name != input.Name) { await _authorManager.ChangeNameAsync(author, input.Name); }
+        author.Description = input.Description;
+        await _authorRepository.UpdateAsync(author);
     }
 }

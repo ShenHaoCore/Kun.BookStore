@@ -7,4 +7,10 @@ namespace Kun.BookStore.Authors;
 /// </summary>
 public interface IAuthorRepository : IRepository<Author, Guid>
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
+    Task<Author?> FindByNameAsync(string name);
 }

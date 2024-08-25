@@ -12,7 +12,6 @@ namespace Kun.BookStore;
 /// </summary>
 [DependsOn(typeof(AbpAutofacModule))]
 [DependsOn(typeof(AbpTestBaseModule))]
-[DependsOn(typeof(BookStoreDomainModule))]
 public class BookStoreTestBaseModule : AbpModule
 {
     /// <summary>

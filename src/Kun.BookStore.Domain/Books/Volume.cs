@@ -1,12 +1,11 @@
-﻿using Volo.Abp.Auditing;
-using Volo.Abp.Domain.Entities;
+﻿using Volo.Abp.Domain.Entities.Auditing;
 
 namespace Kun.BookStore.Books;
 
 /// <summary>
 /// 分卷
 /// </summary>
-public class Volume : Entity<Guid>, IHasCreationTime
+public class Volume : FullAuditedEntity<Guid>
 {
     /// <summary>
     /// 

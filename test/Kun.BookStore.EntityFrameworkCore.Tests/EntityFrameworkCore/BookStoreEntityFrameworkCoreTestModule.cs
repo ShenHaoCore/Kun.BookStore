@@ -12,7 +12,7 @@ namespace Kun.BookStore.EntityFrameworkCore;
 
 /// <summary>
 /// 
-/// </summary
+/// </summary>
 [DependsOn(typeof(AbpEntityFrameworkCoreSqliteModule))]
 [DependsOn(typeof(BookStoreEntityFrameworkCoreModule))]
 [DependsOn(typeof(BookStoreTestBaseModule))]

@@ -6,7 +6,7 @@ namespace Kun.BookStore.Books;
 /// <summary>
 /// 章节文本
 /// </summary>
-public class ChapterText : AuditedEntity<Guid>
+public class ChapterText : FullAuditedEntity<Guid>
 {
     /// <summary>
     /// 

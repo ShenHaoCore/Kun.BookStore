@@ -17,15 +17,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kun.BookStore.TestBase", "t
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kun.BookStore.EntityFrameworkCore.Tests", "test\Kun.BookStore.EntityFrameworkCore.Tests\Kun.BookStore.EntityFrameworkCore.Tests.csproj", "{2AC47793-82D8-475A-8A1E-49C035169CA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.SqlSugarCore", "src\Kun.BookStore.SqlSugarCore\Kun.BookStore.SqlSugarCore.csproj", "{9FB714CE-9502-4263-82AB-92FD8F3A26AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kun.BookStore.SqlSugarCore", "src\Kun.BookStore.SqlSugarCore\Kun.BookStore.SqlSugarCore.csproj", "{9FB714CE-9502-4263-82AB-92FD8F3A26AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.Application.Contracts", "src\Kun.BookStore.Application.Contracts\Kun.BookStore.Application.Contracts.csproj", "{BB35EAFC-8D5E-4A43-BEB1-D8364B8A9922}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kun.BookStore.Application.Contracts", "src\Kun.BookStore.Application.Contracts\Kun.BookStore.Application.Contracts.csproj", "{BB35EAFC-8D5E-4A43-BEB1-D8364B8A9922}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.Application", "src\Kun.BookStore.Application\Kun.BookStore.Application.csproj", "{47E69EC4-7D65-4919-AA98-D46EAC97B301}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kun.BookStore.Application", "src\Kun.BookStore.Application\Kun.BookStore.Application.csproj", "{47E69EC4-7D65-4919-AA98-D46EAC97B301}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.Application.Texts", "test\Kun.BookStore.Application.Texts\Kun.BookStore.Application.Texts.csproj", "{2F2BB55B-BFD2-4ECA-9E78-37A4EC35F25E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kun.BookStore.Application.Texts", "test\Kun.BookStore.Application.Texts\Kun.BookStore.Application.Texts.csproj", "{2F2BB55B-BFD2-4ECA-9E78-37A4EC35F25E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.Domain.Tests", "test\Kun.BookStore.Domain.Tests\Kun.BookStore.Domain.Tests.csproj", "{3681A417-FF68-4C9D-B00C-71A1A9C350AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kun.BookStore.Domain.Tests", "test\Kun.BookStore.Domain.Tests\Kun.BookStore.Domain.Tests.csproj", "{3681A417-FF68-4C9D-B00C-71A1A9C350AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kun.BookStore.DbMigrator", "src\Kun.BookStore.DbMigrator\Kun.BookStore.DbMigrator.csproj", "{228EB6F5-1854-4413-85F0-05F49AE865FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kun.BookStore.HttpApi", "src\Kun.BookStore.HttpApi\Kun.BookStore.HttpApi.csproj", "{1D83DA5A-0B50-4EE8-AA2A-63171A6A752D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +77,14 @@ Global
 		{3681A417-FF68-4C9D-B00C-71A1A9C350AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3681A417-FF68-4C9D-B00C-71A1A9C350AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3681A417-FF68-4C9D-B00C-71A1A9C350AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{228EB6F5-1854-4413-85F0-05F49AE865FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{228EB6F5-1854-4413-85F0-05F49AE865FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{228EB6F5-1854-4413-85F0-05F49AE865FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{228EB6F5-1854-4413-85F0-05F49AE865FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D83DA5A-0B50-4EE8-AA2A-63171A6A752D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D83DA5A-0B50-4EE8-AA2A-63171A6A752D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D83DA5A-0B50-4EE8-AA2A-63171A6A752D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D83DA5A-0B50-4EE8-AA2A-63171A6A752D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +100,8 @@ Global
 		{47E69EC4-7D65-4919-AA98-D46EAC97B301} = {CC924660-6B3B-41AA-87A5-A25A6793525E}
 		{2F2BB55B-BFD2-4ECA-9E78-37A4EC35F25E} = {F644752D-6E7B-44DB-B46B-40EB60E37F62}
 		{3681A417-FF68-4C9D-B00C-71A1A9C350AF} = {F644752D-6E7B-44DB-B46B-40EB60E37F62}
+		{228EB6F5-1854-4413-85F0-05F49AE865FE} = {CC924660-6B3B-41AA-87A5-A25A6793525E}
+		{1D83DA5A-0B50-4EE8-AA2A-63171A6A752D} = {CC924660-6B3B-41AA-87A5-A25A6793525E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F725F131-CDCF-45D1-A4CE-9C985FF554DE}

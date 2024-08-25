@@ -1,6 +1,5 @@
 ﻿using Kun.BookStore.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Threading;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -17,5 +16,16 @@ public class AuthorRepository : EfCoreRepository<BookStoreDbContext, Author, Gui
     /// <param name="dbContextProvider"></param>
     public AuthorRepository(IDbContextProvider<BookStoreDbContext> dbContextProvider) : base(dbContextProvider)
     {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
+    public async Task<Author?> FindByNameAsync(string name)
+    {
+        var db = await GetDbSetAsync();
+        return await db.FirstOrDefaultAsync(author => author.Name == name);
     }
 }
